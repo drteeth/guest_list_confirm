@@ -11,7 +11,7 @@ defmodule GuestListConfirm.ConfirmationController do
   def edit(conn, %{"id" => id}) do
     confirmation = Repo.get!(Confirmation, id)
     changeset = Confirmation.changeset(confirmation)
-    render conn, "edit.html", confirmation: confirmation, changeset: changeset
+    render conn, "edit.html", confirmation: changeset
   end
 
   def update(conn, %{"id" => id, "confirmation" => params}) do
@@ -24,7 +24,7 @@ defmodule GuestListConfirm.ConfirmationController do
         |> put_flash(:info, "Your RSVP has been sent.")
         |> redirect(to: confirmation_path(conn, :edit, confirmation.id))
       {:error, changeset} ->
-        render conn, "edit.html", confirmation: confirmation, changeset: changeset
+        render conn, "edit.html", confirmation: changeset
     end
   end
 
