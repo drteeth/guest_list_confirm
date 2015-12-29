@@ -4,8 +4,10 @@ defmodule GuestListConfirm.Repo.Migrations.CreateConfirmation do
   def change do
     create table(:confirmations, primary_key: false) do
       add :id, :uuid, primary_key: true
-      add :is_coming, :boolean
-      add :has_guest, :boolean, default: false
+      add :email, :string, null: false
+      add :is_coming, :boolean, null: false, default: false
+      add :has_guest, :boolean, null: false, default: false
+      add :rsvped_at, :datetime
       add :food_restrictions, :text
       add :other, :text
 

@@ -4,8 +4,10 @@ defmodule GuestListConfirm.Confirmation do
   @primary_key {:id, :binary_id, autogenerate: true}
 
   schema "confirmations" do
-    field :is_coming, :boolean, default: false
-    field :has_guest, :boolean, default: false
+    field :email, :string, null: false
+    field :is_coming, :boolean, null: false, default: false
+    field :has_guest, :boolean, null: false, default: false
+    field :rsvped_at, Ecto.DateTime
     field :food_restrictions, :string
     field :other, :string
 

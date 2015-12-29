@@ -16,7 +16,9 @@ defmodule GuestListConfirm.Router do
   scope "/", GuestListConfirm do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    # get "/", ConfirmationController, :index
+    get "/:id", ConfirmationController, :edit
+    patch "/:id", ConfirmationController, :update
   end
 
   # Other scopes may use custom stacks.
