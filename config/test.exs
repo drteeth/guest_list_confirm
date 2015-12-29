@@ -12,8 +12,8 @@ config :logger, level: :warn
 # Configure your database
 config :guest_list_confirm, GuestListConfirm.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: "ben",
+  # password: "postgres",
   database: "guest_list_confirm_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
