@@ -14,8 +14,8 @@ defmodule GuestListConfirm.Confirmation do
     timestamps
   end
 
-  @required_fields ~w(is_coming)
-  @optional_fields ~w()
+  @required_fields ~w(is_coming has_guest)
+  @optional_fields ~w(food_restrictions other)
 
   @doc """
   Creates a changeset based on the `model` and `params`.

@@ -1,1 +1,9 @@
-<p><%= @confirmation.email %></p>
+<h1><%= @confirmation.email %></h1>
+<%= form_for @changeset, confirmation_path(@conn, :edit, @confirmation.id), fn f -> %>
+  <label>Coming? <%= checkbox f, :is_coming %></label><br />
+  <label>Bringing a guest? <%= checkbox f, :has_guest %></label><br />
+  <label>Do you or your guest have any food restrictions? <%= text_input f, :food_restrictions %></label><br />
+  <label>Anything else we should know? <%= text_input f, :other %></label><br />
+
+  <%= submit "Submit" %>
+<% end %>
