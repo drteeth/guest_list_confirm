@@ -1,4 +1,4 @@
-defmodule GuestListConfirm.PageControllerTest do
+defmodule GuestListConfirm.ConfirmationControllerTest do
   use GuestListConfirm.ConnCase
 
   test "GET /", %{conn: conn} do
