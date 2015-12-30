@@ -10,6 +10,7 @@ defmodule GuestListConfirm.Confirmation do
     field :rsvped_at, Ecto.DateTime
     field :food_restrictions, :string
     field :other, :string
+    field :sent_rsvp, :boolean, null: false, default: false
 
     timestamps
   end
